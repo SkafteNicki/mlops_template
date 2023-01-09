@@ -1,0 +1,4 @@
+hest:
+  python --version
+
+p
