@@ -22,4 +22,3 @@ dependencies = {file = ["requirements.txt"]}
 
 [tool.setuptools.dynamic.optional-dependencies]
 dev = {file = ['requirements_dev.txt']}
-docs = {file = ['docs/requirements_docs.txt']}
