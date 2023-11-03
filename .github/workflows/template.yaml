@@ -41,6 +41,7 @@ jobs:
         run: |
           cd project_name
           make create_environment
-          make requrements
+          conda activate project_name
+          make requirements
           make clean
           make help
