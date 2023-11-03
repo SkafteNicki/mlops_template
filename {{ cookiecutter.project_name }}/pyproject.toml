@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = {{ cookiecutter.project_name|tojson }}
+version = "0.0.1"
+description = {{ cookiecutter.description|tojson }}
+authors = [
+  { name = {{ cookiecutter.author_name|tojson }}, email = "your@email.com" },
+]
+{% if cookiecutter.open_source_license != 'No license file' %}license = { file = "LICENSE" }{% endif %}
+readme = "README.md"
+requires-python = "~={{ cookiecutter.python_version_number }}"
+dynamic = ["dependencies", "optional-dependencies"]
+
+[tool.setuptools]
+packages = ["src"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.dynamic.optional-dependencies]
+dev = {file = ['requirements_dev.txt']}
+docs = {file = ['docs/requirements_docs.txt']}
