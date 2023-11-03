@@ -29,4 +29,4 @@ jobs:
 
       - name: Execute template
         run: |
-          cookiecutter .  -no-input
+          cookiecutter . --no-input
