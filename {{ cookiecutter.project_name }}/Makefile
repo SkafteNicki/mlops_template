@@ -35,7 +35,7 @@ clean:
 ## Make Dataset
 .PHONY: data
 data: requirements
-	$(PYTHON_INTERPRETER) {{ cookiecutter.module_name }}/data/make_dataset.py
+	$(PYTHON_INTERPRETER) src/data/make_dataset.py
 
 
 
