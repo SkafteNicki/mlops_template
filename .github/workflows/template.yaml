@@ -1,4 +1,4 @@
-name: tests
+name: Generate Template
 
 on:
   push:
@@ -12,7 +12,7 @@ on:
 
 jobs:
   template:
-    name: Code Quality
+    name: Template generation
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -30,3 +30,17 @@ jobs:
       - name: Execute template
         run: |
           cookiecutter . --no-input
+
+      - name: Install conda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-activate-base: true
+          activate-environment: ""
+
+      - name: Run make commands
+        run: |
+          cd project_name
+          make create_environment
+          make requrements
+          make clean
+          make help
