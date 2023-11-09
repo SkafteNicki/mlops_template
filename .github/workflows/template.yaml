@@ -47,4 +47,4 @@ jobs:
 
       - name: Build documentation
         run: |
-          make documentation
+          make build_documentation

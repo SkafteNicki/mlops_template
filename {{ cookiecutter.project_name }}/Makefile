@@ -13,7 +13,7 @@ PYTHON_INTERPRETER = python
 ## Set up python interpreter environment
 .PHONY: create_environment
 create_environment:
-	conda create --name $(PROJECT_NAME) python=$(PYTHON_VERSION) -y
+	conda create --name $(PROJECT_NAME) python=$(PYTHON_VERSION) --no-default-packages -y
 
 ## Install Python Dependencies
 .PHONY: requirements

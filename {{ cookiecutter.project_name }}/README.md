@@ -30,9 +30,9 @@ The directory structure of the project looks like this:
 │
 ├── tests              <- Test files
 │
-└── src                <- Source code for use in this project.
+└── {{cookiecutter.project_name}}  <- Source code for use in this project.
     │
-    ├── __init__.py    <- Makes src a Python module
+    ├── __init__.py    <- Makes folder a Python module
     │
     ├── data           <- Scripts to download or generate data
     │   ├── __init__.py
