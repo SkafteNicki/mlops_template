@@ -47,4 +47,5 @@ jobs:
 
       - name: Build documentation
         run: |
+          cd project_name
           make build_documentation
