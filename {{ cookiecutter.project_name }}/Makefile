@@ -47,7 +47,7 @@ data: requirements
 # Documentation RULES                                                           #
 #################################################################################
 
-.PHODY: build_documentation
+.PHONY: build_documentation
 build_documentation: dev_requirements
 	mkdocs build --config-file docs/mkdocs.yaml --site-dir build
 
