@@ -15,7 +15,7 @@ requires-python = "~={{ cookiecutter.python_version_number }}"
 dynamic = ["dependencies", "optional-dependencies"]
 
 [tool.setuptools]
-packages = ["src"]
+packages = ["{{cookiecutter.project_name}}"]
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}

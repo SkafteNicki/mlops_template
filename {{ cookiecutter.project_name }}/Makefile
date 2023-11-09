@@ -44,6 +44,18 @@ data: requirements
 	$(PYTHON_INTERPRETER) src/data/make_dataset.py
 
 #################################################################################
+# Documentation RULES                                                           #
+#################################################################################
+
+.PHODY: build_documentation
+build_documentation: dev_requirements
+	mkdocs build --config-file docs/mkdocs.yaml --site-dir build
+
+.PHONY: serve_documentation
+serve_documentation: dev_requirements
+	mkdocs serve --config-file docs/mkdocs.yaml
+
+#################################################################################
 # Self Documenting Commands                                                     #
 #################################################################################
 

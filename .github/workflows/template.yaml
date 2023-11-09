@@ -43,5 +43,11 @@ jobs:
           make create_environment
           conda activate project_name
           make requirements
+          make dev_requirements
           make clean
           make help
+
+      - name: Build documentation
+        run: |
+          cd docs
+          mkdocs build
