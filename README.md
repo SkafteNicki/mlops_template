@@ -1,8 +1,10 @@
-# A up-to-date Cookiecutter template for MLOps
+# 🍪 A up-to-date Cookiecutter template for MLOps
 
 ---
 
-Inspired by the [cookiecutter-data-science](https://github.com/drivendata/cookiecutter-data-science) template.
+Inspired by the [cookiecutter-data-science](https://github.com/drivendata/cookiecutter-data-science) template. This
+template has been updated to better fit machine learning based projects and is being used as the core template in
+this [MLOps course](https://github.com/SkafteNicki/dtu_mlops).
 
 ## Requirements to use the template:
 
@@ -24,3 +26,7 @@ git add .
 git commit -m "init cookiecutter project"
 git push
 ```
+
+## The stack
+
+* Coding in Python <img src="icons/python.svg.png" width="200" height="100">
