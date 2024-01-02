@@ -1,6 +1,4 @@
 name: Generate Template
-env:
-  TERM: xterm
 
 on:
   push:
@@ -17,8 +15,6 @@ jobs:
     name: Template generation
     runs-on: ubuntu-latest
     steps:
-      - name: Insta
-
       - uses: actions/checkout@v3
 
       - name: Set up Python
@@ -49,6 +45,8 @@ jobs:
           make clean
           make data
           make help
+        env:
+          TERM: xterm
 
       - name: Build documentation
         run: |
