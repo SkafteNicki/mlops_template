@@ -43,6 +43,7 @@ jobs:
           make requirements
           make dev_requirements
           make clean
+          make data
           make help
 
       - name: Build documentation
