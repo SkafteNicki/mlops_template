@@ -1,4 +1,6 @@
 name: Generate Template
+env:
+  TERM: xterm
 
 on:
   push:
@@ -47,8 +49,6 @@ jobs:
           make clean
           make data
           make help
-        env:
-          TERM: xterm
 
       - name: Build documentation
         run: |
