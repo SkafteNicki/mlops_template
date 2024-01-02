@@ -3,7 +3,7 @@
 ---
 
 Inspired by the [cookiecutter-data-science](https://github.com/drivendata/cookiecutter-data-science) template. This
-template has been updated to better fit machine learning based projects and is being used as the core template in
+template has been updated to better fit machine learning-based projects and is being used as the core template in
 this [MLOps course](https://github.com/SkafteNicki/dtu_mlops).
 
 ## Requirements to use the template:
@@ -17,7 +17,9 @@ this [MLOps course](https://github.com/SkafteNicki/dtu_mlops).
 cookiecutter https://github.com/SkafteNicki/mlops_template
 ```
 
-To commit as a new github repository afterwards
+and input starting values for the project.
+
+To commit as a new GitHub repository afterwards
 
 ```bash
 cd <project_name>
