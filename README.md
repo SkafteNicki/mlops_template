@@ -13,20 +13,30 @@ this [MLOps course](https://github.com/SkafteNicki/dtu_mlops).
 
 ## Start a new project
 
+Start by creating a repository either using the Github GUI in the webbrowser or alternatively you can use the
+[Github command line interface](https://cli.github.com/) if you have set it up:
+
+```bash
+gh repo create <repo_name> --public --confirm
+```
+Afterwards on your local machine run
+
 ```bash
 cookiecutter https://github.com/SkafteNicki/mlops_template
 ```
 
-and input starting values for the project.
+and input starting values for the project. When asked for the repository named when creating the template,
+input the same name as when you created the repository.
 
-To commit as a new GitHub repository afterwards
+To commit to the remote repository afterwards execute the following set of commands:
 
 ```bash
-cd <project_name>
+cd <repo_name>
 git init
 git add .
 git commit -m "init cookiecutter project"
-git push
+git remote add origin https://github.com/<username>/<repo_name>
+git push origin master
 ```
 
 ## The stack
