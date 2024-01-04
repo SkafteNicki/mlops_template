@@ -4,7 +4,7 @@
 # GLOBALS                                                                       #
 #################################################################################
 
-PROJECT_NAME = {{ cookiecutter.repo_name }}
+PROJECT_NAME = {{ cookiecutter.project_name }}
 PYTHON_VERSION = {{ cookiecutter.python_version_number }}
 PYTHON_INTERPRETER = python
 
@@ -37,8 +37,8 @@ clean:
 #################################################################################
 
 ## Process raw data into processed data
-data: requirements
-	$(PYTHON_INTERPRETER) $(PROJECT_NAME)/data/make_dataset.py
+data:
+	python $(PROJECT_NAME)/data/make_dataset.py
 
 #################################################################################
 # Documentation RULES                                                           #
