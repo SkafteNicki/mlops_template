@@ -8,7 +8,7 @@ this [MLOps course](https://github.com/SkafteNicki/dtu_mlops).
 
 ## Requirements to use the template:
 
-* Python 3.10
+* Python 3.11
 * Cookiecutter v2.4.0
 
 ## Start a new project
