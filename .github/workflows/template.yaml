@@ -39,7 +39,7 @@ jobs:
 
       - name: Run make commands
         run: |
-          cd project_name
+          cd repo_name
           make requirements
           make dev_requirements
           make clean
@@ -50,5 +50,5 @@ jobs:
 
       - name: Build documentation
         run: |
-          cd project_name
+          cd repo_name
           make build_documentation
