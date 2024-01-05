@@ -11,7 +11,7 @@ authors = [
 ]
 {% if cookiecutter.open_source_license != 'No license file' %}license = { file = "LICENSE" }{% endif %}
 readme = "README.md"
-requires-python = ">={{ cookiecutter.python_version_number }}"
+requires-python = ">={{ cookiecutter.python_version }}"
 dynamic = ["dependencies", "optional-dependencies"]
 
 [tool.setuptools]

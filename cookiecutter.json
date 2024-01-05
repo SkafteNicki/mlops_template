@@ -3,7 +3,7 @@
   "project_name": "project_name",
   "author_name": "Your name (or your organization/company/team)",
   "description": "A short description of the project.",
-  "python_version_number": "3.11",
+  "python_version": "3.11",
   "open_source_license": [
     "No license file",
     "MIT",
