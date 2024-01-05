@@ -52,3 +52,8 @@ jobs:
         run: |
           cd repo_name
           make build_documentation
+
+      - name: Test dockerfiles
+        run: |
+          cd repo_name
+          docker compose build
