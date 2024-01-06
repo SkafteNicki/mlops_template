@@ -2,7 +2,11 @@ import re
 from keyword import iskeyword
 
 project_name = '{{cookiecutter.project_name}}'
-if not project_name.isidentifier() and not project_name.islower():
+
+import pdb
+pdb.set_trace()
+
+if not project_name.isidentifier() or not project_name.islower():
     raise ValueError(
         "\n"
         "Project name must be a valid project name, meaning that it must be a valid Python name and also be lowercase." 
