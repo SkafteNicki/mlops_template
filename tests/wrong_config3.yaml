@@ -1,0 +1,7 @@
+default_context:
+    repo_name: "repo_name"
+    project_name: "project-name"
+    author_name: "author_name"
+    description: "description"
+    python_version: "3.11"
+    open_source_license: "MIT"

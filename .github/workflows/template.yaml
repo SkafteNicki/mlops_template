@@ -2,9 +2,9 @@ name: Generate Template
 
 on:
   push:
-    branches: [master, v2]
+    branches: [master]
   pull_request:
-    branches: [master, v2]
+    branches: [master]
   schedule:
     # Run every Sunday
     - cron: "0 0 * * 0"
