@@ -48,6 +48,8 @@ git push origin master
 
 🔥 Models in `pytorch` <img src="icons/pytorch.svg" width="20" height="20">
 
+📦 Containerized using `docker` <img src="icons/docker.svg" width="20" height="20">
+
 📄 Documentation in `mkdocs` <img src="icons/markdown.svg" width="20" height="20">
 
 👕 Linting and formatting with `ruff` <img src="icons/ruff.svg" width="20" height="20">
