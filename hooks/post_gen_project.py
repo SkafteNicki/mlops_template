@@ -3,9 +3,6 @@ from keyword import iskeyword
 
 project_name = '{{cookiecutter.project_name}}'
 
-import pdb
-pdb.set_trace()
-
 if not project_name.isidentifier() or not project_name.islower():
     raise ValueError(
         "\n"
