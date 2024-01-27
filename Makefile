@@ -1,3 +1,10 @@
+.PHONY: *
+.DEFAULT_GOAL := hello
+
+# Say hello
+hello:
+	@echo "This is a cookiecutter template for a Python project. Please use \`make <target>\` to run the commands."
+
 # Install requirements
 requirements:
 	python -m pip install -r requirements.txt
