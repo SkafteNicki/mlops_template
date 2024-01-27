@@ -1,6 +1,6 @@
 {
-  "repo_name": "repo_name",
-  "project_name": "project_name",
+  "repo_name": "my_repo",
+  "project_name": "my_project",
   "author_name": "Your name (or your organization/company/team)",
   "description": "A short description of the project.",
   "python_version": "3.11",
