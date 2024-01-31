@@ -24,10 +24,10 @@ create_test_files:
 	@mkdir -p $(DEST_DIR)
 
 	# Find directories in the source directory and prepend "test_" to their names
-	@find $(SOURCE_DIR) -type d ! -wholename $(SOURCE_DIR) -exec sh -c 'new_dir="$${0#$(SOURCE_DIR)/}"; mkdir -p "$(DEST_DIR)/test_$$new_dir"; echo "Created $(DEST_DIR)/test_$$new_dir"' {} \;
+	@find $(SOURCE_DIR) -type d ! -wholename $(SOURCE_DIR) -exec sh -c 'new_dir="$${0#$(SOURCE_DIR)/}"; mkdir -p "$(DEST_DIR)/test_$$new_dir";' {} \;
 	
 	# Add __init__.py files to the newly created directories
-	@find $(SOURCE_DIR) -type d ! -wholename $(SOURCE_DIR) -exec sh -c 'new_dir="$${0#$(SOURCE_DIR)/}"; touch "$(DEST_DIR)/test_$$new_dir/__init__.py"; echo "Created $(DEST_DIR)/test_$$new_dir/__init__.py"' {} \;
+	@find $(SOURCE_DIR) -type d ! -wholename $(SOURCE_DIR) -exec sh -c 'new_dir="$${0#$(SOURCE_DIR)/}"; touch "$(DEST_DIR)/test_$$new_dir/__init__.py";' {} \;
 	
 	# Find Python files in the source directory, prepend "test_" to their names,
 	# and create necessary directory structure in the destination directory
@@ -40,8 +40,15 @@ create_test_files:
 			new_dir_path="$$new_dir_path/"; \
 		fi; \
 		mkdir -p "$(DEST_DIR)/test_$$new_dir_path"; \
-		touch "$(DEST_DIR)/test_$$new_dir_path/test_$$filename"; \
-		echo "Created $(DEST_DIR)/test_$$new_dir_path/test_$$filename"' {} \;
+		FILE="$(DEST_DIR)/test_$$new_dir_path/test_$$filename"; \
+		if [ -f "$$FILE" ]; then \
+			echo "$$FILE exists."; \
+		else \
+			# echo "$$FILE does not exist."; \
+			touch "$(DEST_DIR)/test_$$new_dir_path/test_$$filename"; \
+			# echo "Created $(DEST_DIR)/test_$$new_dir_path/test_$$filename"; \
+		fi; \
+		' {} \;
 
 # Clean test files
 clean_test_files:
