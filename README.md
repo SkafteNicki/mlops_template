@@ -57,3 +57,8 @@ git push origin master
 ✅ Checking using `pre-commit` <img src="icons/precommit.svg" width="20" height="20">
 
 🛠️ CI with `Github actions` <img src="icons/githubactions.svg" width="20" height="20">
+
+
+## Citation
+
+Initial template is created by Nicki Skafte Detlefsen at https://github.com/SkafteNicki/mlops_template

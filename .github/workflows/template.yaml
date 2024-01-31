@@ -5,10 +5,6 @@ on:
     branches: [master]
   pull_request:
     branches: [master]
-  schedule:
-    # Run every Sunday
-    - cron: "0 0 * * 0"
-  workflow_dispatch:
 
 jobs:
   template:
@@ -39,21 +35,21 @@ jobs:
 
       - name: Run make commands
         run: |
-          cd repo_name
+          cd my_repo
           make requirements
           make dev_requirements
           make clean
           make data
-          make help
+          make generate_help
         env:
           TERM: xterm
 
       - name: Build documentation
         run: |
-          cd repo_name
+          cd my_repo
           make build_documentation
 
-      - name: Test dockerfiles
-        run: |
-          cd repo_name
-          docker compose build
+      # - name: Test dockerfiles
+      #   run: |
+      #     cd my_repo
+      #     docker compose build

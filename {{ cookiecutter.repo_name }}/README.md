@@ -6,7 +6,7 @@
 
 The directory structure of the project looks like this:
 
-```txt
+```
 
 ├── Makefile             <- Makefile with convenience commands like `make data` or `make train`
 ├── README.md            <- The top-level README for developers using this project.
