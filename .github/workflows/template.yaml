@@ -35,7 +35,7 @@ jobs:
 
       - name: Run make commands
         run: |
-          cd repo_name
+          cd my_repo
           make requirements
           make dev_requirements
           make clean
@@ -46,10 +46,10 @@ jobs:
 
       - name: Build documentation
         run: |
-          cd repo_name
+          cd my_repo
           make build_documentation
 
       - name: Test dockerfiles
         run: |
-          cd repo_name
+          cd my_repo
           docker compose build
