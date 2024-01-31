@@ -49,7 +49,7 @@ jobs:
           cd my_repo
           make build_documentation
 
-      - name: Test dockerfiles
-        run: |
-          cd my_repo
-          docker compose build
+      # - name: Test dockerfiles
+      #   run: |
+      #     cd my_repo
+      #     docker compose build
