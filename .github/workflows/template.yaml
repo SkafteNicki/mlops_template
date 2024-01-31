@@ -40,7 +40,7 @@ jobs:
           make dev_requirements
           make clean
           make data
-          make help
+          make generate_help
         env:
           TERM: xterm
 
