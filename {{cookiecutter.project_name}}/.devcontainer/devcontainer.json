@@ -1,0 +1,5 @@
+{
+    "name": "devcontainer_{{cookiecutter.project_name}}",
+    "dockerFile": "Dockerfile",
+    "postCreateCommand": "pip install -r requirements.txt -r requirements_dev.txt"
+}

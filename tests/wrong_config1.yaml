@@ -1,5 +1,4 @@
 default_context:
-    repo_name: "repo_name"
     project_name: "1234project_name"
     author_name: "author_name"
     description: "description"

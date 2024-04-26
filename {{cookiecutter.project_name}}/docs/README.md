@@ -5,8 +5,12 @@ Use [mkdocs](http://www.mkdocs.org/) structure to update the documentation.
 
 Build locally with:
 
-    mkdocs build
+```bash
+mkdocs build
+```
 
 Serve locally with:
 
-    mkdocs serve
+```bash
+mkdocs serve
+```
