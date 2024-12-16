@@ -13,14 +13,6 @@ repos:
       - id: check-case-conflict
       - id: detect-private-key
 
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.7.4
-    hooks:
-      - id: ruff
-        args: ["--fix", "--unsafe-fixes"]
-      - id: ruff-format
-      - id: ruff
-
   - repo: https://github.com/codespell-project/codespell
     rev: v2.2.5
     hooks:
