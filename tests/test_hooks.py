@@ -37,3 +37,13 @@ def test_wrong_config3(tmpdir):
             no_input=True,
             output_dir=str(tmpdir),
         )
+
+def test_wrong_config4(tmpdir):
+    with pytest.raises(FailedHookException):
+        cookiecutter(
+            template=".",
+            config_file="tests/wrong_config4.yaml",
+            overwrite_if_exists=True,
+            no_input=True,
+            output_dir=str(tmpdir),
+        )
