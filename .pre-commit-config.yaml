@@ -28,11 +28,6 @@ repos:
         additional_dependencies: [tomli]
         exclude: pyproject.toml
 
-  - repo: https://github.com/crate-ci/typos
-    rev: v1.20.7
-    hooks:
-      - id: typos
-
   - repo: https://github.com/tox-dev/pyproject-fmt
     rev: 1.7.0
     hooks:

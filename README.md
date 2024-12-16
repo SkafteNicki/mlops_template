@@ -27,8 +27,8 @@ cookiecutter https://github.com/SkafteNicki/mlops_template
 
 and input starting values for the project. When asked for the repository name when creating the template,
 input the same name as when you created the repository. Note that when asked for the project name, you should input
-a [valid Python package name](https://peps.python.org/pep-0008/#package-and-module-names). This means that the name 
-should be all lowercase and only contain letters, numbers and underscores. The project name will be used as the name of 
+a [valid Python package name](https://peps.python.org/pep-0008/#package-and-module-names). This means that the name
+should be all lowercase and only contain letters, numbers and underscores. The project name will be used as the name of
 the Python package. This will automatically be validated by the template.
 
 To commit to the remote repository afterwards execute the following set of commands:
