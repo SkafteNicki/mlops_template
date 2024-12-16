@@ -44,16 +44,16 @@ git push origin master
 
 ## The stack
 
-🐍 Python projects using `pyproject.toml` <img src="icons/python.svg" width="20" height="20">
+🐍 Python projects using `pyproject.toml`
 
-🔥 Models in `pytorch` <img src="icons/pytorch.svg" width="20" height="20">
+🔥 Models in `pytorch`
 
-📦 Containerized using `docker` <img src="icons/docker.svg" width="20" height="20">
+📦 Containerized using `docker`
 
-📄 Documentation in `mkdocs` <img src="icons/markdown.svg" width="20" height="20">
+📄 Documentation in `mkdocs`
 
-👕 Linting and formatting with `ruff` <img src="icons/ruff.svg" width="20" height="20">
+👕 Linting and formatting with `ruff`
 
-✅ Checking using `pre-commit` <img src="icons/precommit.svg" width="20" height="20">
+✅ Checking using `pre-commit`
 
-🛠️ CI with `Github actions` <img src="icons/githubactions.svg" width="20" height="20">
+🛠️ CI with `Github actions`
