@@ -149,9 +149,11 @@ src/
 
 ## ❕ License
 
+```bibtex
 @misc{skafte_mlops_template,
     author       = {Nicki Skafte Detlefsen},
     title        = {MLOps template},
     howpublished = {\url{https://github.com/SkafteNicki/mlops_template}},
     year         = {2024}
 }
+```
