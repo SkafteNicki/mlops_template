@@ -2,7 +2,7 @@ import os
 from invoke import task
 
 WINDOWS = os.name == "nt"
-PROJECT_NAME = "{{ cookiecutter.repo_name }}"
+PROJECT_NAME = "{{ cookiecutter.project_name }}"
 PYTHON_VERSION = "{{ cookiecutter.python_version }}"
 
 # Setup commands
