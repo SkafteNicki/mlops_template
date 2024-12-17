@@ -7,11 +7,10 @@ RUN apt update && \
 
 COPY requirements.txt requirements.txt
 COPY pyproject.toml pyproject.toml
-COPY {{cookiecutter.project_name}}/ {{cookiecutter.project_name}}/
-COPY data/ data/
+COPY src/ src/
 
 WORKDIR /
 RUN pip install -r requirements.txt --no-cache-dir
 RUN pip install . --no-deps --no-cache-dir
 
-ENTRYPOINT ["python", "-u", "{{ cookiecutter.project_name }}/predict_model.py"]
+ENTRYPOINT ["python", "-u", "src/{{ cookiecutter.project_name }}/train.py"]

@@ -5,13 +5,13 @@ RUN apt update && \
     apt install --no-install-recommends -y build-essential gcc && \
     apt clean && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt requirements.txt
-COPY pyproject.toml pyproject.toml
-COPY {{cookiecutter.project_name}}/ {{cookiecutter.project_name}}/
-COPY data/ data/
-
 WORKDIR /
+
+COPY requirements.txt .
+COPY pyproject.toml .
+COPY src/{{cookiecutter.project_name}}/ .
+
 RUN pip install -r requirements.txt --no-cache-dir
 RUN pip install . --no-deps --no-cache-dir
 
-ENTRYPOINT ["python", "-u", "{{ cookiecutter.project_name }}/train_model.py"]
+ENTRYPOINT ["uvicorn", "src/{{cookiecutter.project_name}}/api:app", "--host", "0.0.0.0", "--port", "8000"]
