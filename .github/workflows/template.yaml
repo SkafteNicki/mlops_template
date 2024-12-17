@@ -46,7 +46,6 @@ jobs:
         run: |
           cd repo_name
           invoke create-environment
-          conda activate repo_name
           invoke requirements
           invoke dev-requirements
         env:
