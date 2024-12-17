@@ -40,6 +40,16 @@ def preprocess_data(ctx):
 def train(ctx):
     ctx.run(f"python src/{PROJECT_NAME}/train.py", echo=True, pty=not WINDOWS)
 
+@task
+def test(ctx):
+    ctx.run("coverage run -m pytest tests/", echo=True, pty=not WINDOWS)
+    ctx.run("coverage report -m", echo=True, pty=not WINDOWS)
+
+@task
+def docker_build(ctx):
+    ctx.run("docker build -t train:latest dockerfiles/ -f dockerfiles/train.Dockerfile", echo=True, pty=not WINDOWS)
+    ctx.run("docker build -t api:latest dockerfiles/ -f dockerfiles/api.Dockerfile", echo=True, pty=not WINDOWS)
+
 # Documentation commands
 @task(dev_requirements)
 def build_docs(ctx):

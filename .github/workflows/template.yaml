@@ -5,9 +5,6 @@ on:
     branches: [master]
   pull_request:
     branches: [master]
-  schedule:
-    # Run every Sunday
-    - cron: "0 0 * * 0"
   workflow_dispatch:
 
 jobs:
@@ -24,13 +21,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install invoke
+          invoke requirements
           pip list
 
       - name: Execute template
         run: |
-          cookiecutter . --no-input
+          invoke template
 
       - name: Install conda
         uses: conda-incubator/setup-miniconda@v2
@@ -38,23 +35,35 @@ jobs:
           auto-activate-base: true
           activate-environment: ""
 
-      - name: Run make commands
+      - name: Run project commands
         run: |
           cd repo_name
-          make requirements
-          make dev_requirements
-          make clean
-          make data
-          make help
+          invoke create-environment
+          invoke requirements
+          invoke dev-requirements
+          invoke clean
+        env:
+          TERM: xterm
+
+      - name: Run project commands
+        run: |
+          cd repo_name
+          invoke preprocess-data
+          invoke train
+          invoke test
         env:
           TERM: xterm
 
       - name: Build documentation
         run: |
           cd repo_name
-          make build_documentation
+          invoke build-docs
+        env:
+          TERM: xterm
 
-      - name: Test dockerfiles
+      - name: Build dockerfiles
         run: |
           cd repo_name
-          docker compose build
+          invoke build-docker
+        env:
+          TERM: xterm
