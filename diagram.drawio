@@ -1,0 +1,90 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
+  <diagram name="Page-1" id="rwsJieO8R-n18AtSXkyj">
+    <mxGraphModel dx="840" dy="2018" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c47Top_PWlbCqhHpMXBK-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="c47Top_PWlbCqhHpMXBK-1" target="c47Top_PWlbCqhHpMXBK-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c47Top_PWlbCqhHpMXBK-1" value="data.py" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="190" y="310" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c47Top_PWlbCqhHpMXBK-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="c47Top_PWlbCqhHpMXBK-2" target="c47Top_PWlbCqhHpMXBK-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c47Top_PWlbCqhHpMXBK-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="c47Top_PWlbCqhHpMXBK-2" target="c47Top_PWlbCqhHpMXBK-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c47Top_PWlbCqhHpMXBK-2" value="visualize.py" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="280" y="180" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c47Top_PWlbCqhHpMXBK-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="c47Top_PWlbCqhHpMXBK-3" target="c47Top_PWlbCqhHpMXBK-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="350" />
+              <mxPoint x="530" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c47Top_PWlbCqhHpMXBK-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="c47Top_PWlbCqhHpMXBK-3" target="c47Top_PWlbCqhHpMXBK-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="350" />
+              <mxPoint x="530" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c47Top_PWlbCqhHpMXBK-3" value="train&lt;span style=&quot;background-color: initial;&quot;&gt;.py&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="370" y="310" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6H3R4ut3GQv3XWEoVR4_-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="c47Top_PWlbCqhHpMXBK-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c47Top_PWlbCqhHpMXBK-4" value="api.py" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="550" y="240" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6H3R4ut3GQv3XWEoVR4_-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="c47Top_PWlbCqhHpMXBK-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c47Top_PWlbCqhHpMXBK-5" value="evaluate.py" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="550" y="360" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c47Top_PWlbCqhHpMXBK-14" value="Trained model" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="460" y="350" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c47Top_PWlbCqhHpMXBK-18" value="Train/val&lt;div&gt;data interface&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="290" y="360" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c47Top_PWlbCqhHpMXBK-23" value="Visualization utilities" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="265" y="280" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6H3R4ut3GQv3XWEoVR4_-3" value="Performance metrics" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="640" y="400" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6H3R4ut3GQv3XWEoVR4_-4" value="Deploy model" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="640" y="280" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6H3R4ut3GQv3XWEoVR4_-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="6H3R4ut3GQv3XWEoVR4_-5" target="c47Top_PWlbCqhHpMXBK-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6H3R4ut3GQv3XWEoVR4_-5" value="model.py" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="410" y="180" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6H3R4ut3GQv3XWEoVR4_-7" value="Model&lt;div&gt;definition&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="440" y="270" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6H3R4ut3GQv3XWEoVR4_-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.875;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="c47Top_PWlbCqhHpMXBK-1" target="c47Top_PWlbCqhHpMXBK-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6H3R4ut3GQv3XWEoVR4_-10" value="Test data interface" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="320" y="430" width="110" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
