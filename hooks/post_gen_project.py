@@ -12,11 +12,11 @@ if not project_name.isidentifier() or not project_name.islower():
         " In general it is best to use only lowercase letters and underscores."
         " You can read more about Python naming conventions for packages here:"
         " https://peps.python.org/pep-0008/#package-and-module-names"
-        "\n"
+        "\n",
     )
 if iskeyword(project_name):
     raise ValueError(
-        "Project name must not be a built-in keyword, as it will cause syntax errors."
+        "Project name must not be a built-in keyword, as it will cause syntax errors.",
     )
 
 min_version = "3.10"
@@ -25,5 +25,5 @@ if not (ge(python_version, min_version) and le(python_version, max_version)):
     raise ValueError(
         f"Python version must be between {min_version} and {max_version}."
         " These are the versions that still receive support."
-        " You can read more about Python versioning here: https://devguide.python.org/versions/"
+        " You can read more about Python versioning here: https://devguide.python.org/versions/",
     )

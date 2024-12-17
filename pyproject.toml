@@ -1,0 +1,10 @@
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["D100", "D103", "D104", "INP001", "T201"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

@@ -1,6 +1,6 @@
 import pytest
-from cookiecutter.main import cookiecutter
 from cookiecutter.exceptions import FailedHookException
+from cookiecutter.main import cookiecutter
 
 
 def test_wrong_config1(tmpdir):
