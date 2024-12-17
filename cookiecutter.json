@@ -8,5 +8,8 @@
     "No license file",
     "MIT",
     "BSD-3-Clause"
+  ],
+  "_copy_without_render": [
+    "**/workflows/*"
   ]
 }
