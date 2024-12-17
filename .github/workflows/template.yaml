@@ -35,13 +35,17 @@ jobs:
           auto-activate-base: true
           activate-environment: ""
 
+      - name: List all project commands
+        run: |
+          cd repo_name
+          invoke --list
+
       - name: Run project commands
         run: |
           cd repo_name
           invoke create-environment
           invoke requirements
           invoke dev-requirements
-          invoke clean
         env:
           TERM: xterm
 
