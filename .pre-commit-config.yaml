@@ -7,7 +7,6 @@ repos:
     hooks:
       - id: end-of-file-fixer
       - id: trailing-whitespace
-      - id: check-toml
       - id: check-docstring-first
       - id: check-executables-have-shebangs
       - id: check-case-conflict
@@ -19,12 +18,6 @@ repos:
       - id: codespell
         additional_dependencies: [tomli]
         exclude: pyproject.toml
-
-  - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: 1.7.0
-    hooks:
-      - id: pyproject-fmt
-        additional_dependencies: [tox]
 
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: v0.16
