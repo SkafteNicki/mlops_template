@@ -45,7 +45,6 @@ git push origin master
 When the project is created, the repository will have the following structure:
 
 ```txt
-.
 ├── .github/                  # Github actions and dependabot
 │   ├── dependabot.yaml
 │   └── workflows/
@@ -66,7 +65,7 @@ When the project is created, the repository will have the following structure:
 ├── reports/                  # Reports
 │   └── figures/
 ├── src/                      # Source code
-|   ├── project_name/
+│   ├── project_name/
 │   │   ├── __init__.py
 │   │   ├── api.py
 │   │   ├── data.py
