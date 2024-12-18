@@ -1,20 +1,18 @@
 # 🍪 A up-to-date Cookiecutter template for MLOps
-
----
-
-Inspired by the [cookiecutter-data-science](https://github.com/drivendata/cookiecutter-data-science) template. This
-template has been updated to better fit machine learning-based projects and is being used as the core template in
-this [MLOps course](https://github.com/SkafteNicki/dtu_mlops).
+Fiskefilet
+Inspired by the original [cookiecutter-data-science](https://cookiecutter-data-science.drivendata.org/v1/) template.
+This template is more opinionated regarding tools used. It has been updated to better fit machine learning-based
+projects and is being used as the core template in this [MLOps course](https://github.com/SkafteNicki/dtu_mlops).
 
 ## ✋ Requirements to use the template:
 
-* Minimum Python 3.11
-* [cookiecutter](https://github.com/cookiecutter/cookiecutter) v2.4.0
+* Python 3.11 or higher
+* [cookiecutter](https://github.com/cookiecutter/cookiecutter) version 2.4.0 or higher
 
 ## 🆕 Start a new project
 
 Start by creating a repository either using the GitHub GUI in the web browser or alternatively you can use the
-[Github command line interface](https://cli.github.com/) if you have set it up:
+[GitHub command line interface](https://cli.github.com/) if you have set it up:
 
 ```bash
 gh repo create <repo_name> --public --confirm
@@ -97,7 +95,7 @@ In particular lets explain the structure of the `src` folder as that is arguably
 repository. The `src` folder is where the main code of the project is stored. The template divides the code into five
 files, shown in the diagram below with their respective connections:
 
-<img src="diagram.drawio.png" alt="diagram" width="100"/>
+<img src="diagram.drawio.png" alt="diagram" width="1000"/>
 
 * `data.py`: this file is responsible for everything related to the data. This includes loading, cleaning, and splitting
     the data. If the data needs to be pre-processed then running this file should process raw data in the `data/raw`
@@ -146,6 +144,8 @@ src/
 🛠️ CI with `Github actions`
 
 🤖 Automated dependency updates with `Dependabot`
+
+and probably more that I have forgotten...
 
 ## ❕ License
 
