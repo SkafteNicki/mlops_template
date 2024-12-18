@@ -70,6 +70,6 @@ jobs:
       - name: Build dockerfiles
         run: |
           cd repo_name
-          invoke build-docker
+          invoke docker-build
         env:
           TERM: xterm
