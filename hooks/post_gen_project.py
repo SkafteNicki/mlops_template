@@ -1,8 +1,10 @@
 from keyword import iskeyword
 from operator import ge, le
+import shutil
 
 project_name = "{{cookiecutter.project_name}}"
 python_version = "{{cookiecutter.python_version}}"
+project_structure = "{{cookiecutter.project_structure}}"
 
 if not project_name.isidentifier() or not project_name.islower():
     raise ValueError(
@@ -27,3 +29,10 @@ if not (ge(python_version, min_version) and le(python_version, max_version)):
         " These are the versions that still receive support."
         " You can read more about Python versioning here: https://devguide.python.org/versions/",
     )
+
+if project_structure == "simple":
+    folder_and_files_to_remove = [
+        ".github", "dockerfiles", "docs",
+    ]
+    for f in folder_and_files_to_remove:
+        shutil.rmtree(f)

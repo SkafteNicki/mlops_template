@@ -1,0 +1,8 @@
+default_context:
+    repo_name: "advance_repo"
+    project_name: "project_name"
+    project_structure: "advance"
+    author_name: "author_name"
+    description: "description"
+    python_version: "3.11"
+    open_source_license: "MIT"
