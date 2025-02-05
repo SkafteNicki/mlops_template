@@ -2,20 +2,16 @@ from invoke import task, Context
 
 
 @task
-def template(ctx: Context):
+def template(ctx: Context, project_structure: str = "simple", project_manager: str = "pip"):
     """Create a new project from the template."""
-    ctx.run("cookiecutter -f --no-input --verbose .")
-
-@task
-def simple(ctx: Context):
-    """Create a new project from the template."""
-    ctx.run("cookiecutter -f --config-file configs/simple_config.yaml --no-input .")
-
-@task
-def advance(ctx: Context):
-    """Create a new project from the template."""
-    ctx.run("cookiecutter -f --config-file configs/advance_config.yaml --no-input --verbose .")
-
+    if project_structure == "simple" and project_manager == "pip":
+        ctx.run("cookiecutter -f --config-file configs/simple_pip_config.yaml --no-input --verbose .")
+    if project_structure == "simple" and project_manager == "uv":
+        ctx.run("cookiecutter -f --config-file configs/simple_uv_config.yaml --no-input --verbose .")
+    if project_structure == "advance" and project_manager == "pip":
+        ctx.run("cookiecutter -f --config-file configs/advance_pip_config.yaml --no-input --verbose .")
+    if project_structure == "advance" and project_manager == "uv":
+        ctx.run("cookiecutter -f --config-file configs/advance_uv_config.yaml --no-input --verbose .")
 
 @task
 def requirements(ctx: Context):
