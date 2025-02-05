@@ -64,7 +64,10 @@ jobs:
         env:
           TERM: xterm
 
+      # remaining steps are only for the advance project structure
+
       - name: Build documentation
+        if: ${{ matrix.project_structure == 'advance' }}
         run: |
           cd ${{ matrix.project_structure }}_repo
           invoke build-docs
@@ -72,6 +75,7 @@ jobs:
           TERM: xterm
 
       - name: Build dockerfiles
+        if: ${{ matrix.project_structure == 'advance' }}
         run: |
           cd ${{ matrix.project_structure }}_repo
           invoke docker-build
