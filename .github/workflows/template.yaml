@@ -12,10 +12,10 @@ jobs:
     name: Template generation
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: 'pip'
@@ -32,7 +32,7 @@ jobs:
           invoke template
 
       - name: Install conda
-        uses: conda-incubator/setup-miniconda@v2
+        uses: conda-incubator/setup-miniconda@v3
         with:
           auto-activate-base: true
           activate-environment: ""
@@ -70,6 +70,6 @@ jobs:
       - name: Build dockerfiles
         run: |
           cd repo_name
-          invoke build-docker
+          invoke docker-build
         env:
           TERM: xterm
