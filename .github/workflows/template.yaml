@@ -83,3 +83,13 @@ jobs:
           invoke docker-build
         env:
           TERM: xterm
+
+      - name: Check devcontainer
+        if: ${{ matrix.project_structure == 'advance' }}
+        run: |
+          npm install -g @devcontainers/cli
+          cd ${{ matrix.project_structure }}_repo
+          devcontainer build --workspace-folder .
+          devcontainer up --workspace-folder .
+        env:
+          TERM: xterm
