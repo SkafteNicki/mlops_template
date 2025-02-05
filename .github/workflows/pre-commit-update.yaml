@@ -7,6 +7,10 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch: {}  # Allows manual executions
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   auto-update:
     runs-on: ubuntu-latest
