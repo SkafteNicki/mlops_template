@@ -2,6 +2,7 @@ default_context:
     repo_name: "simple_repo"
     project_name: "project_name"
     project_structure: "simple"
+    deps_manager: "pip"
     author_name: "author_name"
     description: "description"
     python_version: "3.11"
