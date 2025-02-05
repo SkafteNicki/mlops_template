@@ -1,4 +1,4 @@
-name: Generate Template
+name: Check Template
 
 on:
   push:
@@ -8,9 +8,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  template:
-    name: Template generation
+  conda-template:
+    name: Template generation for pip setting
     runs-on: ubuntu-latest
+    matrix:
+      project_structure: ["simple", "advance"]
     steps:
       - uses: actions/checkout@v3
 
@@ -29,7 +31,7 @@ jobs:
 
       - name: Execute template
         run: |
-          invoke template
+          invoke ${{ matrix.project_structure }}
 
       - name: Install conda
         uses: conda-incubator/setup-miniconda@v2
