@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools", "setuptools-scm"]
+requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -10,6 +10,11 @@ authors = [
   { name = {{ cookiecutter.author_name|tojson }}, email = "your@email.com" },
 ]
 {% if cookiecutter.open_source_license != 'No license file' %}license = { file = "LICENSE" }{% endif %}
+keywords = ["machine learning", "MLOps"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+]
 readme = "README.md"
 requires-python = ">={{ cookiecutter.python_version }}"
 dynamic = ["dependencies", "optional-dependencies"]

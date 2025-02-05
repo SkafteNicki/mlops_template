@@ -1,5 +1,5 @@
 # 🍪 A up-to-date Cookiecutter template for MLOps
-Fiskefilet
+
 Inspired by the original [cookiecutter-data-science](https://cookiecutter-data-science.drivendata.org/v1/) template.
 This template is more opinionated regarding tools used. It has been updated to better fit machine learning-based
 projects and is being used as the core template in this [MLOps course](https://github.com/SkafteNicki/dtu_mlops).
@@ -45,15 +45,12 @@ git push origin master
 When the project is created, the repository will have the following structure:
 
 ```txt
-.
 ├── .github/                  # Github actions and dependabot
 │   ├── dependabot.yaml
 │   └── workflows/
 │       └── tests.yaml
 ├── configs/                  # Configuration files
 ├── data/                     # Data directory
-│   ├── external
-│   ├── interim
 │   ├── processed
 │   └── raw
 ├── dockerfiles/              # Dockerfiles
@@ -68,7 +65,7 @@ When the project is created, the repository will have the following structure:
 ├── reports/                  # Reports
 │   └── figures/
 ├── src/                      # Source code
-|   ├── project_name/
+│   ├── project_name/
 │   │   ├── __init__.py
 │   │   ├── api.py
 │   │   ├── data.py
@@ -85,10 +82,10 @@ When the project is created, the repository will have the following structure:
 ├── .pre-commit-config.yaml
 ├── LICENSE
 ├── pyproject.toml            # Python project file
-├── README.md
-├── requirements.txt
-├── requirements_dev.txt
-└── tasks.py
+├── README.md                 # Project README
+├── requirements.txt          # Project requirements
+├── requirements_dev.txt      # Development requirements
+└── tasks.py                  # Project tasks
 ```
 
 In particular lets explain the structure of the `src` folder as that is arguably the most important part of the
@@ -131,23 +128,32 @@ src/
 
 🐍 Python projects using `pyproject.toml`
 
-🔥 Models in `pytorch`
+🔥 Models in [Pytorch](https://pytorch.org/)
 
-📦 Containerized using `docker`
+📦 Containerized using [Docker](https://www.docker.com/)
 
-📄 Documentation in `mkdocs`
+📄 Documentation with [Material Mkdocs](https://squidfunk.github.io/mkdocs-material/)
 
-👕 Linting and formatting with `ruff`
+👕 Linting and formatting with [ruff](https://docs.astral.sh/ruff/)
 
-✅ Checking using `pre-commit`
+✅ Checking using [pre-commit](https://pre-commit.com/)
 
-🛠️ CI with `Github actions`
+🛠️ CI with [GitHub Actions](https://github.com/features/actions)
 
-🤖 Automated dependency updates with `Dependabot`
+🤖 Automated dependency updates with [Dependabot](https://github.com/dependabot)
+
+📝 Project tasks using [Invoke](https://www.pyinvoke.org/)
 
 and probably more that I have forgotten...
 
+
+https://www.pyinvoke.org/
+
+
 ## ❕ License
+
+If you enjoy using the template, please consider giving credit by citing it.
+You can use the following BibTeX entry:
 
 ```bibtex
 @misc{skafte_mlops_template,
