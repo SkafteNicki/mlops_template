@@ -146,10 +146,6 @@ src/
 
 and probably more that I have forgotten...
 
-
-https://www.pyinvoke.org/
-
-
 ## ❕ License
 
 If you enjoy using the template, please consider giving credit by citing it.
