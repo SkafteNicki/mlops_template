@@ -8,3 +8,7 @@ ignore = ["D100", "D103", "D104", "INP001", "T201"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
+
+[tool.coverage.run]
+include = ["src/*"]
+omit = ["tests/*"]
