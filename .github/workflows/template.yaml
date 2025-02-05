@@ -11,8 +11,9 @@ jobs:
   conda-template:
     name: Template generation for pip setting
     runs-on: ubuntu-latest
-    matrix:
-      project_structure: ["simple", "advance"]
+    strategy:
+      matrix:
+        project_structure: ["simple", "advance"]
     steps:
       - uses: actions/checkout@v3
 
