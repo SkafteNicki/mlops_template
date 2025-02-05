@@ -1,6 +1,6 @@
 default_context:
-    repo_name: "repo_name"
-    project_name: "project-name"
+    repo_name: "advance_repo"
+    project_name: "project_name"
     project_structure: "advance"
     deps_manager: "pip"
     author_name: "author_name"
