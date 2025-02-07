@@ -3,7 +3,7 @@ default_language_version:
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v5.0.0
     hooks:
       - id: end-of-file-fixer
       - id: trailing-whitespace
@@ -13,13 +13,13 @@ repos:
       - id: detect-private-key
 
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.5
+    rev: v2.4.1
     hooks:
       - id: codespell
         additional_dependencies: [tomli]
         exclude: pyproject.toml
 
   - repo: https://github.com/abravalheri/validate-pyproject
-    rev: v0.16
+    rev: v0.23
     hooks:
       - id: validate-pyproject
