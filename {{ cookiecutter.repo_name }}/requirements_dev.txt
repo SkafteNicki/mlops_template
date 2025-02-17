@@ -6,7 +6,7 @@ pre-commit==4.1.0
 
 # testing
 pytest==8.3.4
-coverage==7.6.9
+coverage==7.6.12
 
 # linting
 ruff==0.1.3
