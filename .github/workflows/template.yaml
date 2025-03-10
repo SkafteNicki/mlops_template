@@ -57,8 +57,8 @@ jobs:
       - name: Download generated template
         uses: actions/download-artifact@v4
         with:
-          name: generated-template-${{ matrix.project_structure }}-${{ matrix.project_manager }}
-          path: ${{ matrix.project_structure }}_${{ matrix.project_manager }}_repo
+          name: generated-template-${{ matrix.project_structure }}-pip
+          path: ${{ matrix.project_structure }}_pip_repo
 
       - name: Install conda
         uses: conda-incubator/setup-miniconda@v3
@@ -87,8 +87,8 @@ jobs:
       - name: Download generated template
         uses: actions/download-artifact@v4
         with:
-          name: generated-template-${{ matrix.project_structure }}-${{ matrix.project_manager }}
-          path: ${{ matrix.project_structure }}_${{ matrix.project_manager }}_repo
+          name: generated-template-${{ matrix.project_structure }}-uv
+          path: ${{ matrix.project_structure }}_uv_repo
 
       - name: Install uv
         uses: astral-sh/setup-uv@v5
