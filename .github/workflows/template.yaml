@@ -68,7 +68,7 @@ jobs:
 
       - name: List all project commands
         run: |
-          cd ${{ matrix.project_structure }}_repo
+          cd ${{ matrix.project_structure }}_pip_repo
           invoke --list
 
 
@@ -95,7 +95,7 @@ jobs:
 
       - name: List all project commands
         run: |
-          cd ${{ matrix.project_structure }}_repo
+          cd ${{ matrix.project_structure }}_uv_repo
           uvx invoke --list
 
 
