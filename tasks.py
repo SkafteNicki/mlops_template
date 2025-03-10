@@ -28,3 +28,10 @@ def clean(ctx: Context):
     ctx.run("rm -rf advance_repo")
     ctx.run("rm -rf .pytest_cache")
     ctx.run("rm -rf .ruff_cache")
+
+
+@task
+def actions(ctx: Context):
+    """Run Github actions."""
+    ctx.run("act --list")
+    ctx.run("act --artifact-server-path /tmp/artifacts")

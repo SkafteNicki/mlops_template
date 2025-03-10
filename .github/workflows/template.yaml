@@ -66,11 +66,57 @@ jobs:
           auto-activate-base: true
           activate-environment: ""
 
+      - name: Install project dependencies
+        run: |
+          cd ${{ matrix.project_structure }}_pip_repo
+          pip install invoke
+          invoke create-environment
+          invoke requirements
+          invoke dev-requirements
+        env:
+          TERM: xterm
+
       - name: List all project commands
         run: |
           cd ${{ matrix.project_structure }}_pip_repo
           invoke --list
 
+      - name: Run project commands
+        run: |
+          cd ${{ matrix.project_structure }}_pip_repo
+          invoke preprocess-data
+          invoke train
+          invoke test
+        env:
+          TERM: xterm
+
+      # remaining steps are only for the advance project structure
+
+      - name: Build documentation
+        if: ${{ matrix.project_structure == 'advance' }}
+        run: |
+          cd ${{ matrix.project_structure }}_pip_repo
+          invoke build-docs
+        env:
+          TERM: xterm
+
+      - name: Build dockerfiles
+        if: ${{ matrix.project_structure == 'advance' }}
+        run: |
+          cd ${{ matrix.project_structure }}_pip_repo
+          invoke docker-build
+        env:
+          TERM: xterm
+
+      - name: Check devcontainer
+        if: ${{ matrix.project_structure == 'advance' }}
+        run: |
+          npm install -g @devcontainers/cli
+          cd ${{ matrix.project_structure }}_pip_repo
+          devcontainer build --workspace-folder .
+          devcontainer up --workspace-folder .
+        env:
+          TERM: xterm
 
   uv-project:
     name: Project using uv
@@ -93,77 +139,49 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v5
 
+      - name: Install project dependencies
+        run: |
+          cd ${{ matrix.project_structure }}_uv_repo
+          uv sync --all
+
       - name: List all project commands
         run: |
           cd ${{ matrix.project_structure }}_uv_repo
-          uvx invoke --list
+          uv run invoke --list
 
+      - name: Run project commands
+        run: |
+          cd ${{ matrix.project_structure }}_uv_repo
+          uv run invoke preprocess-data
+          uv run invoke train
+          uv run invoke test
+        env:
+          TERM: xterm
 
-      # - name: Install uv
-      #   if: ${{ matrix.project_manager == 'uv' }}
-      #   uses: astral-sh/setup-uv@v5
+      # remaining steps are only for the advance project structure
 
-      # - name: Install dependencies for uv
-      #   if: ${{ matrix.project_manager == 'uv' }}
-      #   run: |
-      #     uv sync --all-extras --dev
-      #     uv pip list
+      - name: Build documentation
+        if: ${{ matrix.project_structure == 'advance' }}
+        run: |
+          cd ${{ matrix.project_structure }}_uv_repo
+          uv run invoke build-docs
+        env:
+          TERM: xterm
 
+      - name: Build dockerfiles
+        if: ${{ matrix.project_structure == 'advance' }}
+        run: |
+          cd ${{ matrix.project_structure }}_uv_repo
+          uv run invoke docker-build
+        env:
+          TERM: xterm
 
-
-      # - name: Install conda
-      #   uses: conda-incubator/setup-miniconda@v3
-      #   with:
-      #     auto-activate-base: true
-      #     activate-environment: ""
-
-      # - name: List all project commands
-      #   run: |
-      #     cd ${{ matrix.project_structure }}_repo
-      #     invoke --list
-
-      # - name: Run project commands
-      #   run: |
-      #     cd ${{ matrix.project_structure }}_repo
-      #     invoke create-environment
-      #     invoke requirements
-      #     invoke dev-requirements
-      #   env:
-      #     TERM: xterm
-
-      # - name: Run project commands
-      #   run: |
-      #     cd ${{ matrix.project_structure }}_repo
-      #     invoke preprocess-data
-      #     invoke train
-      #     invoke test
-      #   env:
-      #     TERM: xterm
-
-      # # remaining steps are only for the advance project structure
-
-      # - name: Build documentation
-      #   if: ${{ matrix.project_structure == 'advance' }}
-      #   run: |
-      #     cd ${{ matrix.project_structure }}_repo
-      #     invoke build-docs
-      #   env:
-      #     TERM: xterm
-
-      # - name: Build dockerfiles
-      #   if: ${{ matrix.project_structure == 'advance' }}
-      #   run: |
-      #     cd ${{ matrix.project_structure }}_repo
-      #     invoke docker-build
-      #   env:
-      #     TERM: xterm
-
-      # - name: Check devcontainer
-      #   if: ${{ matrix.project_structure == 'advance' }}
-      #   run: |
-      #     npm install -g @devcontainers/cli
-      #     cd ${{ matrix.project_structure }}_repo
-      #     devcontainer build --workspace-folder .
-      #     devcontainer up --workspace-folder .
-      #   env:
-      #     TERM: xterm
+      - name: Check devcontainer
+        if: ${{ matrix.project_structure == 'advance' }}
+        run: |
+          npm install -g @devcontainers/cli
+          cd ${{ matrix.project_structure }}_uv_repo
+          devcontainer build --workspace-folder .
+          devcontainer up --workspace-folder .
+        env:
+          TERM: xterm
