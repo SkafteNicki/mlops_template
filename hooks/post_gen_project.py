@@ -32,6 +32,7 @@ if not (ge(python_version, min_version) and le(python_version, max_version)):
         " You can read more about Python versioning here: https://devguide.python.org/versions/",
     )
 
+# Remove unnecessary files and folders for the simple template
 if project_structure == "simple":
     folder_and_files_to_remove = [
         ".github", ".devcontainer", "dockerfiles", "docs",
@@ -39,6 +40,18 @@ if project_structure == "simple":
     for f in folder_and_files_to_remove:
         shutil.rmtree(f)
 
+# Rename files and folders for the uv template
 if deps_manager == "uv":
     Path("requirements.txt").unlink()
     Path("requirements_dev.txt").unlink()
+    Path("pyproject_pip.toml").unlink()
+    Path("pyproject_uv.toml").rename("pyproject.toml")
+    Path("tasks_pip.py").unlink()
+    Path("tasks_uv.py").rename("tasks.py")
+
+if deps_manager == "pip":
+    Path("pyproject_uv.toml").unlink()
+    Path("pyproject_pip.toml").rename("pyproject.toml")
+    Path("tasks_uv.py").unlink()
+    Path("tasks_pip.py").rename("tasks.py")
+    Path("uv.lock").unlink()
