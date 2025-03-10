@@ -90,8 +90,6 @@ jobs:
         env:
           TERM: xterm
 
-      # remaining steps are only for the advance project structure
-
       - name: Build documentation
         if: ${{ matrix.project_structure == 'advance' }}
         run: |
@@ -142,7 +140,7 @@ jobs:
       - name: Install project dependencies
         run: |
           cd ${{ matrix.project_structure }}_uv_repo
-          uv sync --all
+          uv sync --all-extras --dev
 
       - name: List all project commands
         run: |
@@ -157,8 +155,6 @@ jobs:
           uv run invoke test
         env:
           TERM: xterm
-
-      # remaining steps are only for the advance project structure
 
       - name: Build documentation
         if: ${{ matrix.project_structure == 'advance' }}
