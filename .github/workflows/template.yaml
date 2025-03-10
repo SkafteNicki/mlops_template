@@ -11,11 +11,10 @@ jobs:
   setup:
     name: Template generation
     runs-on: ubuntu-latest
-    outputs:
-      project_structure: ${{ matrix.project_structure }}
     strategy:
       matrix:
         project_structure: ["simple", "advance"]
+        project_manager: ["pip", "uv"]
       fail-fast: false
     steps:
       - uses: actions/checkout@v4
@@ -37,6 +36,12 @@ jobs:
           invoke template \
             --project-structure=${{ matrix.project_structure }} --project-manager=${{ matrix.project_manager }}
 
+      - name: Upload generated template
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-template-${{ matrix.project_structure }}-${{ matrix.project_manager }}
+          path: ${{ matrix.project_structure }}_${{ matrix.project_manager }}_repo
+
   pip-project:
     name: Project using pip
     needs: setup
@@ -49,6 +54,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Download generated template
+        uses: actions/download-artifact@v4
+        with:
+          name: generated-template-${{ matrix.project_structure }}-${{ matrix.project_manager }}
+          path: ${{ matrix.project_structure }}_${{ matrix.project_manager }}_repo
+
       - name: Install conda
         uses: conda-incubator/setup-miniconda@v3
         with:
@@ -59,6 +70,7 @@ jobs:
         run: |
           cd ${{ matrix.project_structure }}_repo
           invoke --list
+
 
   uv-project:
     name: Project using uv
@@ -71,6 +83,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Download generated template
+        uses: actions/download-artifact@v4
+        with:
+          name: generated-template-${{ matrix.project_structure }}-${{ matrix.project_manager }}
+          path: ${{ matrix.project_structure }}_${{ matrix.project_manager }}_repo
 
       - name: Install uv
         uses: astral-sh/setup-uv@v5
