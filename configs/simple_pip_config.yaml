@@ -5,5 +5,5 @@ default_context:
     deps_manager: "pip"
     author_name: "author_name"
     description: "description"
-    python_version: "3.11"
+    python_version: "3.12"
     open_source_license: "MIT"
