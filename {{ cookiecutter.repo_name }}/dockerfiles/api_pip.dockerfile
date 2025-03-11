@@ -1,4 +1,3 @@
-# Base image
 FROM python:{{ cookiecutter.python_version }}-slim AS base
 
 RUN apt update && \
@@ -14,4 +13,4 @@ COPY pyproject.toml pyproject.toml
 RUN pip install -r requirements.txt --no-cache-dir --verbose
 RUN pip install . --no-deps --no-cache-dir --verbose
 
-ENTRYPOINT ["python", "-u", "src/{{ cookiecutter.project_name }}/train.py"]
+ENTRYPOINT ["uvicorn", "src.{{cookiecutter.project_name}}.api:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -56,6 +56,10 @@ if deps_manager == "uv":
     Path("pyproject_uv.toml").rename("pyproject.toml")
     Path("tasks_pip.py").unlink()
     Path("tasks_uv.py").rename("tasks.py")
+    Path("dockerfiles/api_pip.dockerfile").unlink()
+    Path("dockerfiles/api_uv.dockerfile").rename("dockerfiles/api.dockerfile")
+    Path("dockerfiles/train_pip.dockerfile").unlink()
+    Path("dockerfiles/train_uv.dockerfile").rename("dockerfiles/train.dockerfile")
 
 if deps_manager == "pip":
     logger.info("Renaming files and folders for the pip template.")
@@ -64,3 +68,7 @@ if deps_manager == "pip":
     Path("tasks_uv.py").unlink()
     Path("tasks_pip.py").rename("tasks.py")
     Path("uv.lock").unlink()
+    Path("dockerfiles/api_uv.dockerfile").unlink()
+    Path("dockerfiles/api_pip.dockerfile").rename("dockerfiles/api.dockerfile")
+    Path("dockerfiles/train_uv.dockerfile").unlink()
+    Path("dockerfiles/train_pip.dockerfile").rename("dockerfiles/train.dockerfile")
