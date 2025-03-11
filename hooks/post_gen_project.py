@@ -68,7 +68,6 @@ if deps_manager == "pip":
     Path("pyproject_pip.toml").rename("pyproject.toml")
     Path("tasks_uv.py").unlink()
     Path("tasks_pip.py").rename("tasks.py")
-    Path("uv.lock").unlink()
     if project_structure == "advance":
         Path("dockerfiles/api_uv.dockerfile").unlink()
         Path("dockerfiles/api_pip.dockerfile").rename("dockerfiles/api.dockerfile")
