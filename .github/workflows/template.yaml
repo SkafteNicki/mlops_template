@@ -38,7 +38,7 @@ jobs:
 
       - name: Generated tree structure
         run: |
-          tree ${{ matrix.project_structure }}_${{ matrix.project_manager }}_repo
+          tree -a ${{ matrix.project_structure }}_${{ matrix.project_manager }}_repo
 
       - name: Upload generated template
         uses: actions/upload-artifact@v4
