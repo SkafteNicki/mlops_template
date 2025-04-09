@@ -45,6 +45,7 @@ jobs:
         with:
           name: generated-template-${{ matrix.project_structure }}-${{ matrix.project_manager }}
           path: ${{ matrix.project_structure }}_${{ matrix.project_manager }}_repo
+          include-hidden-files: true
 
   pip-project:
     name: Project using pip
