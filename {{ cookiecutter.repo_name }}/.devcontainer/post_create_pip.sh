@@ -1,11 +1,10 @@
 #! /usr/bin/env bash
 
-# Install uv
-curl -LsSf https://astral.sh/uv/install.sh | sh
-source $HOME/.cargo/env
+# Install dependencies from requirements.txt
+pip install -r requirements.txt
 
-# Install Dependencies
-uv sync
+# Install development dependencies from requirements_dev.txt
+pip install -r requirements_dev.txt
 
 # Install pre-commit hooks
-uv run pre-commit install --install-hooks
+pre-commit install --install-hooks
