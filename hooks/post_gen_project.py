@@ -45,7 +45,8 @@ if project_structure == "simple":
         ".github", ".devcontainer", "dockerfiles", "docs",
     ]
     for f in folder_and_files_to_remove:
-        shutil.rmtree(f)
+        if Path(f).exists():
+            shutil.rmtree(f)
 
 # Rename files and folders for the uv template
 if deps_manager == "uv":
