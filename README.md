@@ -23,7 +23,22 @@ Afterwards on your local machine run
 cookiecutter https://github.com/SkafteNicki/mlops_template
 ```
 
-and input starting values for the project. When asked for the repository name when creating the template,
+You will be prompted with the following questions:
+
+```txt
+    [1/6] repo_name (repo_name):
+    [2/6] project_name (project_name):
+    [3/6] author_name (Your name (or your organization/company/team)):
+    [4/6] description (A short description of the project.):
+    [5/6] python_version (3.11):
+    [6/6] Select open_source_license
+        1 - No license file
+        2 - MIT
+        3 - BSD-3-Clause
+        Choose from [1/2/3] (1):
+```
+
+Where you should input starting values for the project. When asked for the repository name when creating the template,
 input the same name as when you created the repository. Note that when asked for the project name, you should input
 a [valid Python package name](https://peps.python.org/pep-0008/#package-and-module-names). This means that the name
 should be all lowercase and only contain letters, numbers and underscores. The project name will be used as the name of
