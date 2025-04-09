@@ -1,5 +1,9 @@
 repo_name/
 simple_repo/
 advance_repo/
+simple_pip_repo/
+simple_uv_repo/
+advance_pip_repo/
+advance_uv_repo/
 __pycache__/
 *.bkp

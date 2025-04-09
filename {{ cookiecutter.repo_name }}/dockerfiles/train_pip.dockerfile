@@ -1,4 +1,3 @@
-# Change from latest to a specific version if your requirements.txt
 FROM python:{{ cookiecutter.python_version }}-slim AS base
 
 RUN apt update && \
@@ -14,4 +13,4 @@ COPY pyproject.toml pyproject.toml
 RUN pip install -r requirements.txt --no-cache-dir --verbose
 RUN pip install . --no-deps --no-cache-dir --verbose
 
-ENTRYPOINT ["uvicorn", "src.{{cookiecutter.project_name}}.api:app", "--host", "0.0.0.0", "--port", "8000"]
+ENTRYPOINT ["python", "-u", "src/{{ cookiecutter.project_name }}/train.py"]

@@ -1,9 +1,9 @@
 default_context:
-    repo_name: "repo_name"
+    repo_name: "simple_uv_repo"
     project_name: "project_name"
-    project_structure: "advance"
-    deps_manager: "pip"
+    project_structure: "simple"
+    deps_manager: "uv"
     author_name: "author_name"
     description: "description"
-    python_version: "3.9"
+    python_version: "3.12"
     open_source_license: "MIT"
