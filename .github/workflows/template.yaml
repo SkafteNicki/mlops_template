@@ -64,6 +64,10 @@ jobs:
           name: generated-template-${{ matrix.project_structure }}-pip
           path: ${{ matrix.project_structure }}_pip_repo
 
+      - name: Artifact structure
+        run: |
+          tree -a ${{ matrix.project_structure }}_pip_repo
+
       - name: Install conda
         uses: conda-incubator/setup-miniconda@v3
         with:
@@ -113,10 +117,9 @@ jobs:
       - name: Check devcontainer
         if: ${{ matrix.project_structure == 'advance' }}
         run: |
-          npm install -g @devcontainers/cli
           cd ${{ matrix.project_structure }}_pip_repo
-          devcontainer build --workspace-folder .
-          devcontainer up --workspace-folder .
+          npx devcontainer build --workspace-folder .
+          npx devcontainer up --workspace-folder .
         env:
           TERM: xterm
 
@@ -137,6 +140,10 @@ jobs:
         with:
           name: generated-template-${{ matrix.project_structure }}-uv
           path: ${{ matrix.project_structure }}_uv_repo
+
+      - name: Artifact structure
+        run: |
+          tree -a ${{ matrix.project_structure }}_uv_repo
 
       - name: Install uv
         uses: astral-sh/setup-uv@v5
@@ -179,9 +186,8 @@ jobs:
       - name: Check devcontainer
         if: ${{ matrix.project_structure == 'advance' }}
         run: |
-          npm install -g @devcontainers/cli
           cd ${{ matrix.project_structure }}_uv_repo
-          devcontainer build --workspace-folder .
-          devcontainer up --workspace-folder .
+          npx devcontainer build --workspace-folder .
+          npx devcontainer up --workspace-folder .
         env:
           TERM: xterm
