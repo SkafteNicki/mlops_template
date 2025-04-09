@@ -118,8 +118,8 @@ jobs:
         if: ${{ matrix.project_structure == 'advance' }}
         run: |
           cd ${{ matrix.project_structure }}_pip_repo
-          npx devcontainer build --workspace-folder .
-          npx devcontainer up --workspace-folder .
+          npx @devcontainers/cli build --workspace-folder .
+          npx @devcontainers/cli up --workspace-folder .
         env:
           TERM: xterm
 
@@ -187,7 +187,7 @@ jobs:
         if: ${{ matrix.project_structure == 'advance' }}
         run: |
           cd ${{ matrix.project_structure }}_uv_repo
-          npx devcontainer build --workspace-folder .
-          npx devcontainer up --workspace-folder .
+          npx @devcontainers/cli build --workspace-folder .
+          npx @devcontainers/cli up --workspace-folder .
         env:
           TERM: xterm
