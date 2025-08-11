@@ -60,7 +60,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Download generated template
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: generated-template-${{ matrix.project_structure }}-pip
           path: ${{ matrix.project_structure }}_pip_repo
@@ -137,7 +137,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Download generated template
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: generated-template-${{ matrix.project_structure }}-uv
           path: ${{ matrix.project_structure }}_uv_repo
