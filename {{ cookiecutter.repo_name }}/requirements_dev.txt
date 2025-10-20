@@ -13,5 +13,5 @@ ruff==0.11.6
 
 # docs
 mkdocs==1.6.1
-mkdocs-material==9.6.1
+mkdocs-material==9.6.22
 mkdocstrings-python==1.16.10
