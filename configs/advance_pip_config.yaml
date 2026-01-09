@@ -3,6 +3,7 @@ default_context:
     project_name: "project_name"
     project_structure: "advance"
     deps_manager: "pip"
+    add_coding_agent_support: true
     author_name: "author_name"
     description: "description"
     python_version: "3.12"

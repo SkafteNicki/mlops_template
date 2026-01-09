@@ -3,6 +3,8 @@ from operator import ge, le
 import shutil
 from pathlib import Path
 
+from sympy import use
+
 try:
     from loguru import logger
 except ImportError:
@@ -17,6 +19,7 @@ project_name = "{{cookiecutter.project_name}}"
 python_version = "{{cookiecutter.python_version}}"
 project_structure = "{{cookiecutter.project_structure}}"
 deps_manager = "{{cookiecutter.deps_manager}}"
+use_coding_agent_support = "{{cookiecutter.add_coding_agent_support}}"
 
 logger.info(f"Project name: {project_name}")
 logger.info(f"Python version: {python_version}")
@@ -87,3 +90,12 @@ if deps_manager == "pip":
         Path("dockerfiles/train_pip.dockerfile").rename("dockerfiles/train.dockerfile")
         Path(".devcontainer/post_create_uv.sh").unlink()
         Path(".devcontainer/post_create_pip.sh").rename(".devcontainer/post_create.sh")
+
+if use_coding_agent_support:
+    logger.info("Adding coding agent support files.")
+    if deps_manager == "pip":
+        Path("AGENTS_uv.md").unlink()
+        Path("AGENTS_pip.md").rename("AGENTS.md")
+    else:
+        Path("AGENTS_pip.md").unlink()
+        Path("AGENTS_uv.md").rename("AGENTS.md")
