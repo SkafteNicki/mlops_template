@@ -73,6 +73,12 @@ if deps_manager == "uv":
         Path("dockerfiles/train_uv.dockerfile").rename("dockerfiles/train.dockerfile")
         Path(".devcontainer/post_create_pip.sh").unlink()
         Path(".devcontainer/post_create_uv.sh").rename(".devcontainer/post_create.sh")
+        Path(".github/workflows/linting_pip.yaml").unlink()
+        Path(".github/workflows/linting_uv.yaml").rename(".github/workflows/linting.yaml")
+        Path(".github/workflows/tests_pip.yaml").unlink()
+        Path(".github/workflows/tests_uv.yaml").rename(".github/workflows/tests.yaml")
+        Path(".github/workflows/pre-commit-update_pip.yaml").unlink()
+        Path(".github/workflows/pre-commit-update_uv.yaml").rename(".github/workflows/pre-commit-update.yaml")
 
 if deps_manager == "pip":
     logger.info("Renaming files and folders for the pip template.")
@@ -87,3 +93,9 @@ if deps_manager == "pip":
         Path("dockerfiles/train_pip.dockerfile").rename("dockerfiles/train.dockerfile")
         Path(".devcontainer/post_create_uv.sh").unlink()
         Path(".devcontainer/post_create_pip.sh").rename(".devcontainer/post_create.sh")
+        Path(".github/workflows/linting_uv.yaml").unlink()
+        Path(".github/workflows/linting_pip.yaml").rename(".github/workflows/linting.yaml")
+        Path(".github/workflows/tests_uv.yaml").unlink()
+        Path(".github/workflows/tests_pip.yaml").rename(".github/workflows/tests.yaml")
+        Path(".github/workflows/pre-commit-update_uv.yaml").unlink()
+        Path(".github/workflows/pre-commit-update_pip.yaml").rename(".github/workflows/pre-commit-update.yaml")

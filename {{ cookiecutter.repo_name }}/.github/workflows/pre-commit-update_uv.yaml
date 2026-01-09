@@ -1,0 +1,42 @@
+# pre-commit auto-update workflow
+# Dependabot does not support updating pre-commit so this workflow will do that
+name: Pre-commit auto-update
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch: {}  # Allows manual executions
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install 3.11
+
+      - name: Install pre-commit
+        run: uv tool install pre-commit
+
+      - name: Run pre-commit autoupdate
+        run: uv tool run pre-commit autoupdate
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: update/pre-commit-autoupdate
+          title: Auto-update pre-commit hooks
+          commit-message: Auto-update pre-commit hooks
+          body: Update versions of tools in pre-commit configs to latest version
+          labels: dependencies
