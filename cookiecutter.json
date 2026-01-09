@@ -2,7 +2,7 @@
   "repo_name": "repo_name",
   "project_name": "project_name",
   "project_structure": ["advance", "simple"],
-  "deps_manager": ["pip", "uv"],
+  "deps_manager": ["uv", "pip"],
   "author_name": "Your name (or your organization/company/team)",
   "description": "A short description of the project.",
   "python_version": "3.12",
