@@ -3,8 +3,6 @@ from operator import ge, le
 import shutil
 from pathlib import Path
 
-from sympy import use
-
 try:
     from loguru import logger
 except ImportError:
