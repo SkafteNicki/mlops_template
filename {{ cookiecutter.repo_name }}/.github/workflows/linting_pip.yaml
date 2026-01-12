@@ -2,11 +2,9 @@ name: Code linting
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   format:
@@ -30,10 +28,14 @@ jobs:
           pip install -r requirements_dev.txt
           pip list
 
-      - name: ruff check
+      - name: ruff linter
         run: |
           ruff check .
 
-      - name: ruff format
+      - name: ruff formatter
         run: |
-          ruff format .
+          ruff format . --check
+
+      - name: mypy type checking
+        run: |
+          mypy .

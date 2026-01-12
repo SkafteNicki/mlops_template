@@ -1,0 +1,38 @@
+name: Code linting
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  format:
+    name: Check code formatting
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: |
+          uv sync --locked --dev
+          uv tree
+
+      - name: ruff linter
+        run: |
+          uv run ruff check .
+
+      - name: ruff formatter
+        run: |
+          uv run ruff format . --check
+
+      - name: mypy type checking
+        run: |
+          uv run mypy .
