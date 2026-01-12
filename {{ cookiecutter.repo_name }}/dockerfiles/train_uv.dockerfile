@@ -7,6 +7,7 @@ RUN uv sync --frozen --no-install-project
 
 COPY src src/
 COPY README.md README.md
+COPY LICENSE LICENSE
 
 RUN uv sync --frozen
 
