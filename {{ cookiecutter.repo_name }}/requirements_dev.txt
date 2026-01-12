@@ -10,8 +10,8 @@ coverage==7.8.0
 
 # linting
 ruff==0.11.6
+mypy==1.19.1
 
 # docs
-mkdocs==1.6.1
-mkdocs-material==9.6.1
-mkdocstrings-python==1.16.10
+mkdocs-material==9.7.1
+mkdocstrings-python==2.0.1

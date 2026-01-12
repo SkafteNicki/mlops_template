@@ -17,6 +17,7 @@ project_name = "{{cookiecutter.project_name}}"
 python_version = "{{cookiecutter.python_version}}"
 project_structure = "{{cookiecutter.project_structure}}"
 deps_manager = "{{cookiecutter.deps_manager}}"
+use_coding_agent_support = "{{cookiecutter.add_coding_agent_support}}"
 
 logger.info(f"Project name: {project_name}")
 logger.info(f"Python version: {python_version}")
@@ -66,6 +67,8 @@ if deps_manager == "uv":
     Path("pyproject_uv.toml").rename("pyproject.toml")
     Path("tasks_pip.py").unlink()
     Path("tasks_uv.py").rename("tasks.py")
+    Path("README_pip.md").unlink()
+    Path("README_uv.md").rename("README.md")
     if project_structure == "advance":
         Path("dockerfiles/api_pip.dockerfile").unlink()
         Path("dockerfiles/api_uv.dockerfile").rename("dockerfiles/api.dockerfile")
@@ -73,6 +76,12 @@ if deps_manager == "uv":
         Path("dockerfiles/train_uv.dockerfile").rename("dockerfiles/train.dockerfile")
         Path(".devcontainer/post_create_pip.sh").unlink()
         Path(".devcontainer/post_create_uv.sh").rename(".devcontainer/post_create.sh")
+        Path(".github/workflows/tests_pip.yaml").unlink()
+        Path(".github/workflows/tests_uv.yaml").rename(".github/workflows/tests.yaml")
+        Path(".github/workflows/linting_pip.yaml").unlink()
+        Path(".github/workflows/linting_uv.yaml").rename(".github/workflows/linting.yaml")
+        Path(".github/dependabot_pip.yaml").unlink()
+        Path(".github/dependabot_uv.yaml").rename(".github/dependabot.yaml")
 
 if deps_manager == "pip":
     logger.info("Renaming files and folders for the pip template.")
@@ -80,6 +89,8 @@ if deps_manager == "pip":
     Path("pyproject_pip.toml").rename("pyproject.toml")
     Path("tasks_uv.py").unlink()
     Path("tasks_pip.py").rename("tasks.py")
+    Path("README_uv.md").unlink()
+    Path("README_pip.md").rename("README.md")
     if project_structure == "advance":
         Path("dockerfiles/api_uv.dockerfile").unlink()
         Path("dockerfiles/api_pip.dockerfile").rename("dockerfiles/api.dockerfile")
@@ -87,3 +98,18 @@ if deps_manager == "pip":
         Path("dockerfiles/train_pip.dockerfile").rename("dockerfiles/train.dockerfile")
         Path(".devcontainer/post_create_uv.sh").unlink()
         Path(".devcontainer/post_create_pip.sh").rename(".devcontainer/post_create.sh")
+        Path(".github/workflows/tests_uv.yaml").unlink()
+        Path(".github/workflows/tests_pip.yaml").rename(".github/workflows/tests.yaml")
+        Path(".github/workflows/linting_uv.yaml").unlink()
+        Path(".github/workflows/linting_pip.yaml").rename(".github/workflows/linting.yaml")
+        Path(".github/dependabot_uv.yaml").unlink()
+        Path(".github/dependabot_pip.yaml").rename(".github/dependabot.yaml")
+
+if use_coding_agent_support:
+    logger.info("Adding coding agent support files.")
+    if deps_manager == "pip":
+        Path("AGENTS_uv.md").unlink()
+        Path("AGENTS_pip.md").rename("AGENTS.md")
+    else:
+        Path("AGENTS_pip.md").unlink()
+        Path("AGENTS_uv.md").rename("AGENTS.md")
