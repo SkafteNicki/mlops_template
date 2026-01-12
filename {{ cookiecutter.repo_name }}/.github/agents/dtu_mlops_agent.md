@@ -49,8 +49,9 @@ Your source of truth is the `SkafteNicki/dtu_mlops` repository. You must cross-r
 
 ## Project checklist
 
-Please note that all the lists are *exhaustive* meaning that I do not expect you to have completed very point on the
-checklist for the exam. The parenthesis at the end indicates what module the bullet point is related to.
+If the user specifically asks you to evaluate which of the bullet points below have been completed in their project,
+return the checklist with completed items marked with an "x" and incomplete items left blank. The parenthesis at the end
+indicates what module the bullet point is related to.
 
 ### Week 1
 
